@@ -351,6 +351,35 @@ export default {
   }
 }
 
+input {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--secondary-color);
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 3px var(--primary-color);
+}
+
+select {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--secondary-color);
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 3px var(--primary-color);
+}
+
+
 body {
   background-color: var(--background-color);
   color: var(--text-color);

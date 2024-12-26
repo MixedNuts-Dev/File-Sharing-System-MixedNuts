@@ -9,7 +9,7 @@ import os
 import shutil 
 
 app = Flask(__name__, static_folder='../frontend/dist', template_folder='../frontend/dist')
-socket.setdefaulttimeout(300)  # 300秒（5分）
+socket.setdefaulttimeout(6000)  # 6000秒（60分）
 
 CORS(app, resources={r"/*": {"origins": ["http://111.108.31.73"]}})
 
@@ -22,7 +22,7 @@ Session(app)
 UPLOAD_DIR = r"E:\\upload"  # アップロード先をE:\uploadに指定
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['UPLOAD_FOLDER'] = UPLOAD_DIR
-app.config['MAX_CONTENT_LENGTH'] = 1000 * 1024 * 1024  # 1000MB制限
+app.config['MAX_CONTENT_LENGTH'] = 10000 * 1024 * 1024  # 10000MB制限
 
 db = SQLAlchemy(app)
 
