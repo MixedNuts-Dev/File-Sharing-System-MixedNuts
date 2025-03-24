@@ -1,7 +1,16 @@
 const { defineConfig } = require('@vue/cli-service');
+const webpack = require('webpack');
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  lintOnSave: false, // Lintチェックを無効化
-  publicPath: './', // 相対パスでの配信を有効化
+  lintOnSave: false, 
+  publicPath: './', 
+  configureWebpack: {
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+      }),
+    ],
+  },
 });
